@@ -1,0 +1,572 @@
+@charset "UTF-8";
+
+#container {
+  min-width:1760px; overflow-x:hidden; background-color:$white;
+
+  #section01 { overflow:hidden; }
+
+  /* 비주얼 */
+  #visual {
+    padding:152px 0 0;
+    .visual_type01 {
+      width:1760px; margin:0 auto; padding:40px 0 80px; position:relative;
+      .slogan_wrap {
+        color:$black; margin:0 0 50px;
+        span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-0.45px; }
+        p { font-size:60px; font-weight:$bold; letter-spacing:-0.7px; }
+      }
+      .bg {
+        width:100%; height:540px; background-image:url(../../images/main/visual_A.jpg);
+        @include backgroundSolt();
+      }
+      .donate_btn { top:120px; right:80px; }
+    }
+
+    /* 영문카피 들어가는 경우 */
+    &.visual_eng .visual_type01 {
+      padding:43px 0 80px;
+      .slogan_wrap { margin:0 0 47px }
+      .slogan_wrap span { letter-spacing:1px; font-family:$elza; margin:0 0 16px; }
+      .slogan_wrap span em { font-family:$pretendard; font-weight:$bold; letter-spacing:-0.05px; }
+    }
+
+    .visual_type02 {
+      width:1760px; margin:0 auto; padding:0 0 80px; display:flex;
+      .visual_wrap { width:660px; padding:109px 0 0 80px; background-color:$templateColor2; position:relative; box-sizing:border-box; }
+      .slogan_wrap {
+        color:$white;
+        span { display:block; font-size:32px; line-height:46px; font-weight:$semi-bold; margin:0 0 12px; letter-spacing:-0.45px; }
+        p { font-size:56px; line-height:72px; font-weight:$bold; letter-spacing:-0.7px; }
+      }
+      .bg {
+        width:1100px; height:740px; background-image:url(../../images/main/visual_B.jpg);
+        @include backgroundSoltC();
+      }
+      .donate_btn { top:500px; left:420px; }
+    }
+
+    /* 영문카피 들어가는 경우 */
+    &.visual_eng .visual_type02 {
+      .slogan_wrap span { letter-spacing:1px; font-family:$elza; margin:0 0 11px; padding:3px 0 0; }
+      .slogan_wrap span em { font-family:$pretendard; font-weight:$bold; letter-spacing:-0.05px; }
+    }
+
+    .visual_type03 {
+      height:820px; position:relative;
+      .video_wrap {
+        width:100%; height:820px; position:relative; overflow:hidden;
+        video {
+          position:absolute; top:50%; left:50%;
+          @include translate(-50%, -50%);
+        }
+      }
+      .visual_wrap {
+        width:100%; position:absolute; bottom:117px; left:0;
+        > div { width:1600px; margin:0 auto; position:relative; }
+        .slogan_wrap {
+          color:$white;
+          span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-0.45px; }
+          p { font-size:60px; font-weight:$bold; letter-spacing:-0.7px; }
+        }
+        .donate_btn { top:-32px; right:0; }
+      }
+    }
+
+    /* 영문카피 들어가는 경우 */
+    &.visual_eng .visual_type03 {
+      .slogan_wrap span { letter-spacing:1px; font-family:$elza; margin:0 0 16px; }
+      .slogan_wrap span em { font-family:$pretendard; font-weight:$bold; letter-spacing:-0.05px; }
+      .donate_btn { top:-35px; }
+    }
+  }
+
+  /* 영상영역 */
+  #about {
+    position:relative; padding:446px 0 0;
+    .marquee_wrap {
+      width:100%; position:absolute; top:138px; left:0; overflow:hidden;
+      @include rotate(-4.5);
+      div { display:flex; }
+      p { white-space:nowrap; display:flex; }
+      strong { font-size:150px; font-weight:$thin; color:$yellow1; letter-spacing:-4px; }
+    }
+    .video_wrap {
+      width:1613px; margin:0 auto; box-sizing:border-box; padding:30px 0 153px 842px; position:relative;
+      .text_wrap {
+        h3 {
+          display:inline-block; background-color:$templateColor4; padding:0 22px 0 25px;
+          @include borderRadius(27px);
+          em { font-family:$emoji; font-size:28px; padding:0 9px 0 0; }
+          span { color:$white; font-size:28px; line-height:54px; font-weight:$semi-bold; letter-spacing:-1px; }
+        }
+        p { min-height:320px; margin:39px 0 0; font-size:24px; line-height:40px; letter-spacing:-0.7px; font-weight:$semi-bold; }
+      }
+      .donate_btn { top:-118px; left:1360px; }
+      .video_box {
+        width:760px; height:426px; background-color:#b9b9b9; position:absolute; top:0; left:0;
+        &:after {
+          content:''; color:$white; position:absolute; top:50%; left:50%; font-size:22px; letter-spacing:-0.15px;
+          @include translate(-50%, -50%);
+        }
+        iframe { width:100%; height:100%; }
+      }
+    }
+  }
+
+  /* 구호창고 */
+  #warehouse {
+    .warehouse_wrap {
+      padding:145px 0 131px;
+      .layout_wrap { width:1760px; margin:0 auto; display:flex; justify-content:space-between; }
+      .text_wrap {
+        padding:13px 0 0 80px; position:relative; z-index:1;
+        h2 { color:$black; display:block; font-size:56px; line-height:64px; letter-spacing:-2.5px; font-weight:$bold; }
+        em { color:$templateColor3; }
+        p { color:$gray4; font-size:22px; line-height:36px; letter-spacing:-0.7px; font-weight:$medium; padding:23px 0 0; }
+      }
+      .btn_wrap {
+        font-size:18px; line-height:42px; padding:0 52px 0 0; display:inline-block; position:absolute; bottom:0; left:80px; z-index:1; color:$gray3; font-weight:$medium;
+        @include transition();
+        &:after {
+          width:40px; height:40px; content:''; background-color:$red2; position:absolute; top:0; right:0; z-index:-1;
+          @include borderRadius(100%);
+        }
+        span {
+          display:block;
+          &:before, &:after {
+            content:''; position:absolute; top:50%;
+          }
+          &:before {
+            width:16px; height:2px; margin:-2px 0 0; background-color:$white; left:212px;
+            @include opacity(0);
+            @include transition(all, 0);
+          }
+          &:after {
+            width:7px; height:12px; margin:-1px 0 0; background-image:url(../../images/common/icon_arr_w.png); right:16px;
+            @include backgroundSolt();
+            @include translate(0, -50%);
+            @include transition();
+          }
+        }
+        &:hover {
+          color:$red2;
+          span:before {
+            left:217px;
+            @include opacity(1);
+            @include transition();
+          }
+          span:after { right:11px; }
+        }
+      }
+      .flag { position:absolute; top:-126px; left:433px; z-index:-1; }
+      .warehouse_list {
+        width:1102px; display:flex; position:relative; z-index:1;
+        li { margin:0 0 0 22px; }
+        li:first-child { margin:0; }
+        a {
+          width:260px; padding:46px 0; margin:20px 0 0; display:block; text-align:center; background-color:#f6faff; border:3px solid #f6faff; box-sizing:border-box;
+          @include transition(all, .4s);
+          @include borderRadius(20px);
+          p { margin:32px 0 0; color:$gray1; }
+          span { display:block; font-size:22px; line-height:22px; font-weight:$semi-bold; letter-spacing:-0.3px; }
+          strong {
+            display:block; font-size:22px; line-height:25px; font-weight:$bold; margin:8px 0 0; font-family:$elza;
+            @include transition(all, .4s);
+          }
+          strong:after { content:'원'; letter-spacing:-0.3px; }
+          &:hover {
+            background-color:$white; border-color:#da3a34;
+            margin:0;
+            strong { color:$red2;  }
+          }
+        }
+      }
+
+      &.warehouse_type02 {
+        background-image:url(../../images/main/noise_bg.gif);
+        @include backgroundSolt(0, 0, repeat);
+        .text_wrap * { color:$white; }
+      }
+    }
+    .marquee_wrap {
+      overflow:hidden; background-color:$templateColor1;
+      div { display:flex; }
+      ul { white-space:nowrap; display:flex; }
+      li {
+        font-size:22px; margin:0 10px; color:$white; line-height:70px; padding:0 0 0 54px; position:relative; letter-spacing:-0.3px;
+        &:before {
+          width:34px; height:25px; background-image:url(../../images/common/icon_ai.png); content:''; position:absolute; top:50%; left:0;
+          @include translate(0, -50%);
+          @include backgroundSoltC();
+        }
+        em { letter-spacing:0; }
+      }
+    }
+  }
+
+  /* 활동가 이야기 (가로스크롤) */
+  #section02 {
+    height:calc(100vh - 152px); overflow:hidden;
+    .horizon_wrap {
+      /*width:5300px;*/ width:3380px; height:100%; display:flex;
+      .activist_story {
+        width:3380px; height:100%; background-image:url(../../images/main/noise_bg3.gif); position:relative; box-sizing:border-box;
+        @include backgroundSolt(0, 0, repeat);
+        .title_wrap {
+          position:absolute; top:50%; left:160px; margin:-190px 0 0;
+          @include translate(0, -50%);
+          span { color:#a88044; font-size:32px; font-weight:$semi-bold; display:block; letter-spacing:-1.2px; }
+          strong { color:$black; font-size:70px; line-height:80px; display:block; letter-spacing:-4.5px; padding:18px 0 0; }
+        }
+        .about_text {
+          position:absolute; top:50%;
+          @include translate(0, -50%);
+          p {
+            font-size:18px; line-height:32px; font-weight:$medium; letter-spacing:-0.5px;
+            span { color:$red2; }
+          }
+          strong { font-size:36px; line-height:50px; display:block; letter-spacing:-1.6px }
+
+        }
+        &:before, &:after {
+          width:680px; height:660px; content:''; position:absolute; top:50%;
+          @include translate(0, -50%);
+          @include backgroundSoltC();
+        }
+        &:before { left:1040px; background-image:url(../../images/main/activist_photo01.png); }
+        &:after { left:2541px; background-image:url(../../images/main/activist_photo02.png); }
+
+        .about_text01 { left:420px; margin:76px 0 0; }
+        .about_text02 { left:1842px; margin:-10px 0 0; }
+        .about_text02 p { padding:35px 0 0 81px; }
+      }
+      .activist_msg {
+        /*width:1920px;*/width:100vw; height:100%; position:absolute; top:0; right:0; z-index:-1; background-image:url(../../images/main/activist_msg_bg.jpg);
+        @include scale(1.3);
+        @include backgroundSoltC();
+        p { position:absolute; top:50%; left:50%; color:$black; font-size:20px; line-height:30px; font-weight:$medium; letter-spacing:-0.6px; }
+        .msg01 { z-index:1; margin:-184px 0 0 -585px; }
+        .msg01:before {
+          width:29px; height:22px; position:absolute; top:-7px; left:-21px; z-index:-1; background-image:url(../../images/main/icon_quotes.png); content:'';
+          @include backgroundSolt();
+        }
+        .msg02 { margin:-147px 0 0 208px; }
+      }
+    }
+  }
+
+  /* 활동 원칙 */
+  #principles {
+    padding:162px 0 173px; background-image:url(../../images/main/noise_bg.gif);
+    @include backgroundSolt(0, 0, repeat);
+    background-color:$black;
+    .principles_wrap { width:1594px; margin:0 auto; color:rgba(255, 255, 255, 0.1); position:relative; }
+    .slogan_wrap {
+      position:relative; padding:0 0 65px;
+      .text_effect_wrap {
+        position:relative; display:inline-block;
+        strong { overflow:hidden; font-size:120px; display:inline-block; font-weight:$medium; font-family:$elza; color:#454646; letter-spacing:0.4px; }
+        .dimmed_text { width:0; color:$white; position:absolute; top:0; left:0; white-space:nowrap; }
+        &:after { width:1580px; height:1px; background-color:#454646; position:absolute; bottom:-61px; left:7px; content:''; }
+      }
+      .line { width:0; height:1px; background-color:$white; position:absolute; bottom:4px; left:7px; }
+    }
+    .text_wrap {
+      padding:93px 0 0 708px; margin:82px 0 0;
+      div { position:relative; display:inline-block; vertical-align:middle }
+      p { font-size:28px; line-height:52px; font-weight:$medium; letter-spacing:-1.25px; overflow:hidden; color:#454646; }
+      .dimmed_text { width:0; color:$white; position:absolute; top:0; left:0; white-space:nowrap; }
+    }
+    .msfk_flag {
+      width:235px; height:212px; text-indent:-99999px; z-index:1; display:block; position:absolute; top:263px; left:427px;
+      &:before, &:after { position:absolute; content:''; }
+      &:before {
+        width:100%; height:100%; background-image:url(../../images/main/msfk_flag.gif); position:absolute; top:0; left:0;
+        @include backgroundSoltC();
+      }
+      &:after {
+        width:212px; height:212px; background-image:url(../../images/main/flag_noise.jpg); top:1px; left:0; z-index:-1;
+        @include backgroundSolt(0, 0, repeat);
+        @include borderRadius(100%);
+      }
+    }
+  }
+
+  /* 후원 효과 */
+  #section04 { padding:144px 0 68px; }
+  #effect {
+    width:1600px; margin:0 auto;
+    h2 { color:$black; font-size:46px; line-height:62px; font-weight:$bold; letter-spacing:-2px; }
+    .effect_list {
+      margin:141px 0 0; display:flex; justify-content:space-between;
+      div { width:480px; }
+      dl { margin:0 0 108px; }
+      dl:last-child { margin:0; }
+      dt {
+        color:$black; font-size:20px; font-weight:$bold; letter-spacing:-0.5px; position:relative; padding:0 0 21px 46px; margin:0 0 46px;
+        &:before {
+          width:40px; height:34px; content:''; position:absolute; top:-9px; left:-3px;
+          @include backgroundSoltC();
+        }
+        &:after { width:100%; height:2px; content:''; background-color:$black; position:absolute; bottom:0; left:0; }
+      }
+      dd {
+        text-align:right;
+        p { position:relative; display:inline-block; }
+      }
+      div:nth-of-type(1) dl:nth-of-type(1) dt:before { background-image:url(../../images/main/effect_icon01.png); }
+      div:nth-of-type(1) dl:nth-of-type(2) dt:before { background-image:url(../../images/main/effect_icon02.png); }
+      div:nth-of-type(2) dl:nth-of-type(1) dt:before { background-image:url(../../images/main/effect_icon03.png); }
+      div:nth-of-type(2) dl:nth-of-type(2) dt:before { background-image:url(../../images/main/effect_icon04.png); }
+      div:nth-of-type(3) dl:nth-of-type(1) dt:before { background-image:url(../../images/main/effect_icon05.png); }
+      div:nth-of-type(3) dl:nth-of-type(2) dt:before { background-image:url(../../images/main/effect_icon06.png); }
+
+      span { display:block; overflow:hidden; font-size:32px; font-weight:$extra-bold; letter-spacing:-0.45px; }
+      strong { font-size:84px; font-weight:$medium; font-family:$elza; letter-spacing:-2.5px; padding:0 11px 0 0; position:relative; top:2px; }
+      .dimmed_text { width:0; color:$red1; position:absolute; top:0; left:0; white-space:nowrap; }
+      .default_text { color:#d4d5d6; }
+    }
+  }
+
+  /* 구호 활동가 */
+  #section05 { padding:152px 0 154px; }
+  #activist {
+    width:1760px; margin:0 auto; box-sizing:border-box; padding:0 0 0 80px; display:flex; justify-content:space-between;
+    .slogan_wrap {
+      height:780px; padding:141px 0 0; position:relative; box-sizing:border-box; z-index:1;
+      &:after {
+        width:493px; height:373px; content:''; background-image:url(../../images/main/activist_bg.png); position:absolute; top:-40px; left:177px; z-index:-1;
+        @include backgroundSolt();
+      }
+      h2 { color:$black; font-size:70px; line-height:86px; letter-spacing:-4px; font-weight:$bold; }
+      p { color:$gray4; font-size:22px; line-height:36px; letter-spacing:-0.7px; margin:37px 0 0; }
+      .donate_btn { left:355px; bottom:-13px; }
+    }
+
+    .activist_list {
+      display:flex; width:1100px; position:relative; z-index:2;
+      li {
+        width:180px; height:780px; position:relative; overflow:hidden; cursor:pointer; margin:0 0 0 60px; background-color:#161616;
+        &:first-child { margin:0; }
+        @include borderRadius(26px);
+        @include transition(all, .5s);
+        &:after { width:100%; height:100%; position:absolute; bottom:0; left:0; background:url(../../images/main/photo_bg.png) 0 0 repeat-x; content:''; }
+        .bg {
+          width:620px; height:100%; position:absolute; top:0; left:0;
+          @include backgroundSolt();
+          @include transition(all, .5s);
+          @include scale(0.9);
+        }
+        .info_wrap {
+          width:100%; padding:0 0 57px 60px; position:absolute; bottom:0; left:0; z-index:1; white-space:nowrap; box-sizing:border-box;
+          @include transition(all, .5s);
+          @include opacity(0);
+          @include translate(-100px, 0);
+          p {
+            color:$white; margin:0 0 15px;
+            strong { font-size:38px; font-weight:$medium; letter-spacing:-1.5px; padding:0 3px 0 0; }
+            span { font-size:22px; font-weight:$medium; letter-spacing:-0.7px; position:relative; top:1px; }
+          }
+          > span { display:block; font-size:22px; letter-spacing:-0.7px; }
+          em { font-style:italic; font-family:$elza; }
+        }
+
+        &.activist_jimin {
+          //background:url(../../images/main/activist_bg01.gif) 0 0 repeat;
+          .bg {
+            /*margin:28px 0 0 -188px;*/ margin:38px 0 0 -188px; background-image:url(../../images/main/activist_jimin.png);
+            @include scale(0.9);
+          }
+          .info_wrap > span { color:$yellow3; }
+        }
+        &.activist_youngwoong {
+          //background:url(../../images/main/activist_bg02.gif) 0 0 repeat;
+          .bg {
+            /*margin:39px 0 0 -213px;*/ margin:49px 0 0 -213px; background-image:url(../../images/main/activist_youngwoong.png);
+            @include scale(0.87);
+          }
+          .info_wrap > span { color:#d3e9f8; }
+        }
+        &.activist_sunhwa {
+          //background:url(../../images/main/activist_bg03.gif) 0 0 repeat;
+          .bg {
+            margin:60px 0 0 -214px; background-image:url(../../images/main/activist_sunhwa.png);
+            @include scale(0.92);
+          }
+          .info_wrap > span { color:#dbe6c1; }
+        }
+        &.active {
+          width:620px;
+          .bg {
+            margin:0;
+            @include scale(1);
+          }
+          .info_wrap {
+            @include opacity(1);
+            @include translate(0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  /* 후원이야기 */
+  #story {
+    background-image:url(../../images/main/noise_bg2.gif); padding:143px 0 145px; overflow:hidden;
+    @include backgroundSolt(0, 0, repeat);
+    .slogan_wrap {
+      width:1600px; margin:0 auto 165px; position:relative;
+      h2 { display:block; color:$black; font-size:46px; line-height:62px; font-weight:$bold; letter-spacing:-2px; }
+      p { color:$gray4; font-size:22px; letter-spacing:-0.7px; padding:22px 0 0; }
+      .donate_btn { top:0; right:0;}
+    }
+    .marquee_wrap {
+      //overflow:hidden;
+      > div { display:flex; }
+      ul { white-space:nowrap; display:flex; }
+      li { width:340px; height:340px; }
+      .letter {
+        font-size:24px; line-height:34px; font-family:$GaRamYeonGgoc; text-align:center; display:flex; justify-content:center; align-items:center; background-color:$white;
+        strong { color:$black; display:block; font-weight:$regular; }
+        span { color:$gray4; display:block; padding:8px 0 0; }
+      }
+      .letter01 { @include rotate(3); }
+      .letter02 {
+        background-color:#daeaff;
+        @include rotate(2);
+        strong { color:#182b45; }
+        span { color:#556272; }
+      }
+      .letter03 { @include rotate(3.5); }
+      .letter04 {
+        background-color:#ffe8e5;
+        @include rotate(5);
+        strong { color:#552b25; }
+        span { color:#77544f; }
+      }
+      .letter05 { @include rotate(3); }
+      .photo { @include backgroundSoltC(); z-index:1; }
+      .photo01 {
+        background-image:url(../../images/main/photo01.jpg);
+        @include rotate(356);
+      }
+      .photo02 {
+        background-image:url(../../images/main/photo02.jpg);
+        @include rotate(357);
+      }
+      .photo03 {
+        background-image:url(../../images/main/photo03.jpg);
+        @include rotate(2);
+      }
+      .photo04 {
+        background-image:url(../../images/main/photo04.jpg);
+        @include rotate(358);
+      }
+      .photo05 {
+        background-image:url(../../images/main/photo05.jpg);
+        @include rotate(357);
+      }
+    }
+  }
+
+  /* 후원캠페인 */
+  #section07 { padding:142px 0 120px; }
+  #campaign {
+    width:1600px; margin:0 auto;
+    .slogan_wrap {
+      position:relative; margin:0 0 110px;
+      h2 { color:$black; font-size:56px; line-height:72px; letter-spacing:-2.5px; }
+      .btn_wrap {
+        font-size:18px; line-height:42px; padding:0 52px 0 0; display:block; position:absolute; top:86px; right:0; color:$gray3; font-weight:$medium; z-index:1;
+        @include transition();
+        &:after {
+          width:40px; height:40px; content:''; background-color:$red2; position:absolute; top:0; right:0; z-index:-1;
+          @include borderRadius(100%);
+        }
+        span {
+          display:block;
+          &:before, &:after {
+            content:''; position:absolute; top:50%;
+          }
+          &:before {
+            width:16px; height:2px; margin:-2px 0 0; background-color:$white; left:132px;
+            @include opacity(0);
+            @include transition(all, 0);
+          }
+          &:after {
+            width:7px; height:12px; margin:-1px 0 0; background-image:url(../../images/common/icon_arr_w.png); right:16px;
+            @include backgroundSolt();
+            @include translate(0, -50%);
+            @include transition();
+          }
+        }
+        &:hover {
+          color:$red2;
+          span:before {
+            left:137px;
+            @include opacity(1);
+            @include transition();
+          }
+          span:after { right:11px; }
+        }
+      }
+    }
+    ul { display:flex; justify-content:space-between }
+    li {
+      width:385px;
+      a {
+        display:block;
+        .thumb {
+          overflow:hidden;
+          @include borderRadius(10px);
+        }
+        img {
+          width:100%;
+          @include transition(all, .5s);
+        }
+        div { padding:33px 0 0; }
+        strong {
+          font-size:24px; letter-spacing:-0.7px; font-weight:$semi-bold; display:block; color:$black; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;
+          @include transition();
+        }
+        span { font-size:18px; margin:16px 0 27px; letter-spacing:-0.5px; display:block; color:$gray4; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; }
+        em {
+          font-size:16px; letter-spacing:-0.5px; display:inline-block; color:$gray3; position:relative;
+          &:before, &:after {
+            content:''; position:absolute; top:50%;
+          }
+          &:before {
+            width:16px; height:2px; margin:-1px 0 0; background-color:#606060; left:70px;
+            @include opacity(0);
+            @include transition(all, 0);
+          }
+          &:after {
+            width:7px; height:12px; margin:0 0 0; background-image:url(../../images/common/icon_arr_g.png); left:77px;
+            @include backgroundSolt();
+            @include translate(0, -50%);
+            @include transition();
+          }
+        }
+        &:hover {
+          img { @include scale(1.1); }
+          strong { color:$red2 }
+          em:before {
+            left:78px;
+            @include opacity(1);
+            @include transition();
+          }
+          em:after { left:88px; }
+        }
+      }
+    }
+  }
+
+  /*.marquee_wrap {
+    overflow:hidden;
+    div { display:flex; }
+    ul { white-space:nowrap; display:flex; }
+    li { font-size:150px; margin:0 20px }
+    .marquee_unit02 {color:red;}
+    .marquee_unit03 {color:blue;}
+  }*/
+}

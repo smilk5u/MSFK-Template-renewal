@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+.top { position: fixed; left: 0; bottom: 0; font-size: 50px; color: black; z-index: 9999; }
+
+header {
+  width:100%; height:152px; position:fixed; top:0; left:0; z-index:100; background-color:$white;
+  @include transition();
+  #logo {
+    position:absolute; top:36px; left:50px;
+    @include transition();
+    a { width:208px; height:64px; display:block; }
+    img, svg { width:100%; height:100%; }
+  }
+  #gnb {
+    text-align:center; font-size:0; padding:62px 0 0;
+    li {
+      display:inline-block; margin:0 40px; line-height:33px; vertical-align:middle;
+      @include transition();
+    }
+    button {
+      font-size:18px; color:$black; vertical-align:middle; letter-spacing:-0.7px; padding:0; font-weight:$medium;
+      @include transition();
+    }
+    li.on button { color:$red2; font-weight:$semi-bold; }
+  }
+  .donate_btn_h {
+    position:absolute; top:43px; right:50px;
+    @include transition();
+    a {
+      width:200px; font-size:20px; line-height:56px; text-align:center; display:block; border:2px solid $red2; color:$white; font-weight:$medium; background-color:$red2; box-sizing:border-box;
+      @include borderRadius(30px);
+      @include transition();
+      &:hover { background-color:$white; color:$red2; }
+    }
+  }
+}
+
+@media all and (max-width:1440px){
+  header {
+    #logo { left:30px; }
+    #gnb li { margin:0 26px; }
+    .donate_btn_h { right:30px; }
+  }
+}
+
+@media all and (max-width:1280px){
+  header #gnb li { margin:0 20px; }
+}
+
+/*@media all and (max-width:1600px){
+  header #gnb li { margin:0 32px; }
+}
+
+@media all and (max-width:1440px){
+  header { height:120px; }
+  header #logo { top:25px; left:30px; }
+  header #gnb { padding:50px 0 0; }
+  header #gnb li { margin:0 26px; }
+  header .donate_btn_h { top:30px; right:30px; }
+}
+
+@media all and (max-width:1280px){
+  header #gnb li { margin:0 12px; }
+}*/
+
+footer {
+  min-width:1760px; background-color:#1d1d1d; padding:46px 0 0;
+  .footer_wrap {
+    max-width:1600px; margin:0 auto;
+    @extend %clearfix;
+  }
+  .logo_footer {
+    float:left;
+    a { width:152px; height:46px; display:block; }
+    img, svg { width:100%; height:100%; }
+  }
+  .info_wrap {
+    float:left; padding:18px 0 42px; font-size:14px; line-height:22px; font-weight:$light; margin:0 0 0 50px;
+    ul { display:flex; }
+    li { color:rgba(233, 233, 234, 0.6); margin:0 20px 0 0; }
+    li:last-child { margin:0; }
+    span { color:rgba(126, 127, 129, 0.6) }
+  }
+  .donate_wrap {
+    float:right; display:flex; align-items:center; padding:6px 0 0;
+    ul { display:flex; color:$white; margin:0 40px 0 0; font-size:17px; }
+    li {
+      position:relative; padding:0 0 0 21px; margin:0 0 0 19px;
+      &:before { width:1px; height:12px; background-color:rgba(255, 255, 255, 0.2); position:absolute; top:50%; left:0; margin:-6px 0 0; content:'' }
+      &:first-child { margin:0; padding:0; }
+      &:first-child:before { display:none; }
+    }
+    strong { color:$yellow2; font-weight:$medium; padding:0 10px 0 0; letter-spacing:-0.15px; }
+    a {
+      width:170px; text-align:center; color:$white; font-size:16px; line-height:42px; font-weight:$medium; background-color:$red2; border:2px solid $red2; box-sizing:border-box;
+      @include borderRadius(30px);
+      @include transition();
+      //&:hover { background-color:$white; color:$red2; }
+    }
+  }
+
+  .share_wrap {
+    position:fixed; bottom:24px; right:31px; background-color:$white; z-index:100; overflow:hidden;
+    @include borderRadius(100%);
+    @include boxShadow(0 0 10px -2px rgba(140,140,140,0.5));
+    button {
+      width:22px; height:22px; text-indent:-99999px;
+      @include backgroundSolt();
+    }
+    .btn_share { width:60px; height:60px; background-image:url(../../images/common/icon_share.png); }
+    ul {
+      width:0; height:0; visibility:hidden;
+      @include opacity(0);
+      @include transition(all, 0.3s);
+      li { position:relative; padding:22px 17px 0 19px; }
+      li:last-child { padding:22px 22px 17px 21px; }
+      /*li:after {
+        width:30px; height:1px; background-color:#e5e5e5; position:absolute; top:0; left:50%; content:'';
+        @include translate(-50%, 0);
+      }
+      li:first-child:after { display:none; }*/
+      .btn_band { background-image:url(../../images/common/icon_band.png); }
+      .btn_facebook { background-image:url(../../images/common/icon_facebook.png); }
+      .btn_twitter { background-image:url(../../images/common/icon_twitter.png); }
+      .btn_kakao { background-image:url(../../images/common/icon_kakao.png); }
+      .btn_copy { width:17px; height:15px; background-image:url(../../images/common/icon_link.png); }
+    }
+
+    &:hover {
+      @include borderRadius(30px);
+      .btn_share { display:none; }
+      ul {
+        width:auto; height:auto; visibility:visible;
+        @include opacity(1);
+      }
+    }
+  }
+
+  // 복사될 텍스트
+  .copy_text { position:absolute; bottom:0; left:0; width:0; height:0; display:inline-block; line-height:1px; z-index:-1; }
+
+  // 복사완료 안내문구
+  .copied_txt {
+    color:$white; font-size:12px; padding:10px 25px; background-color:rgba(0, 0, 0, 0.7); position:fixed; bottom:20px; right:41px; z-index:100; white-space:nowrap; visibility:hidden;
+    @include borderRadius(6px);
+    @include opacity(0);
+    @include translate(0, 100%);
+  }
+}

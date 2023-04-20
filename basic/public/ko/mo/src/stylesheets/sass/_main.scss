@@ -1,0 +1,343 @@
+@charset "UTF-8";
+
+#container {
+    #visual {
+        padding:vw(176) 0 0;
+        .slogan_wrap {
+            margin:0 0 vw(66); padding:0 vw(40);
+            span { display:block; font-size:vw(36); font-weight:$bold; letter-spacing:vw(-.24); margin:0 0 vw(20); }
+            em { font-size:vw(60); font-weight:$bold; line-height:vw(76); letter-spacing:vw(-1.5); }
+        }
+        .bg {
+            height:vw(580); background-image:url(../../images/main/visual.jpg);
+            @include backgroundSoltC();
+        }
+    }
+
+    #about {
+        position:relative; padding:vw(301) 0 0; overflow:hidden;
+        .marquee_wrap {
+            width:100%; position:absolute; top:vw(97); left:0;
+            @include rotate(-4.5);
+            div { display:flex; }
+            p {
+                white-space:nowrap;
+                @include animation(rollingEffect 10s linear infinite);
+            }
+            strong { font-size:vw(94); font-weight:$thin; color:$yellow1; letter-spacing:vw(-2.82); }
+        }
+        .video_wrap {
+            padding:0 vw(40);
+            .video_box {
+                height:vw(376);
+                iframe { width:100%; height:100%; }
+            }
+            .text_wrap {
+                padding:vw(80) 0 0;
+                h3 {
+                    display:inline-block; background-color:$templateColor3; padding:0 vw(32) 0 vw(31);
+                    @include borderRadius(vw(38));
+                    i {
+                        width:vw(39); height:vw(33); background-image:url(../../images/main/emoji_ico.png); display:inline-block; position:relative; top:vw(4);
+                        @include backgroundSoltC();
+                    }
+                    span { color:$white; font-size:vw(34); font-weight:$semi-bold; letter-spacing:vw(-1.53); padding:vw(21) 0 vw(21) vw(10); display:inline-block; }
+                }
+                p { margin:vw(49) 0 0; padding:0 0 0 vw(30); font-size:vw(30); line-height:vw(50); letter-spacing:vw(-1.35); font-weight:$semi-bold; }
+            }
+        }
+    }
+
+    #warehouse {
+        .warehouse_wrap {
+            padding:vw(213) 0 vw(119);
+            .text_wrap {
+                padding:0 vw(40); position:relative;
+                h2 { font-size:vw(60); line-height:vw(76); letter-spacing:vw(-3.6); font-weight:$bold; }
+                em { color:$templateColor2; }
+                p { font-size:vw(28); color:$gray4; line-height:vw(44); letter-spacing:vw(-.84); font-weight:$medium; padding:vw(20) 0 0; }
+            }
+            .donate_btn {
+                padding:vw(55) 0 0;
+                a {
+                    font-size:vw(31); color:$gray3; font-weight:$medium; letter-spacing:vw(-.9); display:inline-block; padding:0 vw(68) 0 0; position:relative;
+                    &:before {
+                        width:vw(60); height:vw(60); content:""; background-color:$red2; position:absolute; top:50%; right:0;
+                        @include borderRadius(50%);
+                        @include translate(0, -50%);
+                    }
+                    &:after {
+                        width:vw(14); height:vw(20); content:""; background-image:url(../../images/warehouse/warehouse_ico.png); position:absolute; top:50%; right:vw(23);
+                        @include backgroundSoltC();
+                        @include translate(0, -50%);
+                    }
+                }
+            }
+            .flag { width:vw(214); position:absolute; top:vw(-111); right:vw(114); z-index:-1; }
+            .warehouse_list {
+                margin:vw(74) 0 0; padding:0 vw(40) vw(50);
+                li { width:vw(350); }
+                a {
+                    width:100%; padding:vw(50) vw(50) vw(57); display:block; text-align:center; background-color:#f6faff; box-sizing:border-box;
+                    @include borderRadius(vw(26));
+                    p { margin:vw(22) 0 0; color:$gray1; }
+                    span { display:block; font-size:vw(28); font-weight:$bold; letter-spacing:vw(-.84); }
+                    strong {display:block; font-size:vw(28); font-weight:$bold; color:$red3; margin:vw(14) 0 0; font-family:$elza;}
+                    strong:after { content:'원'; letter-spacing:vw(-.42); font-family:$pretendard; }
+                }
+                .warehouse_list_scroll {
+                    height:vw(4); background:#f0f1f2; bottom:vw(-50); left:0;
+                    @include borderRadius(vw(2));
+                    .swiper-scrollbar-drag {
+                        background:#8c8d8e;
+                        @include borderRadius(vw(2));
+                    }
+                }
+            }
+
+            &.warehouse_type02 {
+                background-image:url(../../images/main/noise_bg.jpg); margin:vw(110) 0 0; padding:vw(103) 0 vw(119);
+                @include backgroundSolt(0, 0, repeat);
+                .text_wrap * { color:$white; }
+                .warehouse_list {
+                    .warehouse_list_scroll {
+                        background:#5a5c5d;
+                        .swiper-scrollbar-drag {background:#cfd1d3;}
+                    }
+                }
+            }
+        }
+        .marquee_wrap {
+            background-color:$templateColor1; overflow:hidden;
+            div { display:flex; }
+            ul {
+                white-space:nowrap; display:flex;
+                @include animation(rollingEffect 32s linear infinite);
+            }
+            li {
+                font-size:vw(28); margin:0 vw(10); color:$white; line-height:vw(100); padding:0 0 0 vw(66); position:relative; letter-spacing:vw(-.84);
+                &:before {
+                    width:vw(47); height:vw(37); background-image:url(../../images/common/icon_ai.png); content:''; position:absolute; top:50%; left:0;
+                    @include translate(0, -50%);
+                    @include backgroundSoltC();
+                }
+                em { letter-spacing:0; }
+            }
+        }
+    }
+
+    // 활동 원칙
+    #principles {
+        padding:vw(113) 0 vw(107); background-image:url(../../images/main/noise_bg.jpg);
+        @include backgroundSolt(0, 0, repeat);
+        .principles_wrap { padding:0 vw(40); position:relative; }
+        .msfk_flag {
+            width:vw(186); height:vw(167); background-image:url(../../images/main/msfk_flag.png); position:absolute; top:vw(-48); right:vw(21);
+            @include backgroundSoltC();
+        }
+        .slogan_wrap {
+            position:relative; padding:0 0 vw(39);
+            .text_effect_wrap {
+                span { display:block; position:relative; }
+                strong { overflow:hidden; font-size:vw(84); color:#757575; line-height:vw(92); display:block; font-weight:$medium; font-family:$elza; }
+                .dimmed_text { width:0; color:$white; position:absolute; top:0; left:0; white-space:nowrap; }
+            }
+            .default_line { width:100%; height:vw(1); background-color:rgba(116, 116, 116, .2); position:absolute; bottom:0; left:0; }
+            .dimmed_line { width:0; height:vw(1); background-color:$white; position:absolute; bottom:0; left:0; }
+        }
+        .text_wrap {
+            margin:vw(49) 0 0;
+            div { position:relative; }
+            p { font-size:vw(30); color:#747474; line-height:vw(52); font-weight:$medium; letter-spacing:vw(-.9); overflow:hidden; }
+            .dimmed_text { width:0; color:$white; position:absolute; top:0; left:0; white-space:nowrap; }
+        }
+    }
+
+    // 후원 효과
+    #section05 { padding:vw(110) 0 0; }
+    #effect {
+        padding:0 vw(40);
+        h2 { color:$black; font-size:vw(50); line-height:vw(66); font-weight:$bold; letter-spacing:vw(-2.25); }
+        .effect_list {
+            padding:vw(81) 0 0; display:flex; justify-content:space-between; flex-wrap:wrap;
+            dl {
+                width:vw(315); margin:0 0 vw(70);
+                &:nth-of-type(1) dt:before { width:vw(36); height:vw(38); background-image:url(../../images/main/effect_ico_01.png); bottom:vw(12); left:0; }
+                &:nth-of-type(2) dt:before { width:vw(32); height:vw(37); background-image:url(../../images/main/effect_ico_02.png); bottom:vw(12); left:vw(2) }
+                &:nth-of-type(3) dt:before { width:vw(36); height:vw(32); background-image:url(../../images/main/effect_ico_03.png); bottom:vw(14); left:0; }
+                &:nth-of-type(4) dt:before { width:vw(36); height:vw(36); background-image:url(../../images/main/effect_ico_04.png); bottom:vw(11); left:0; }
+                &:nth-of-type(5) dt:before { width:vw(40); height:vw(29); background-image:url(../../images/main/effect_ico_05.png); bottom:vw(14); left:0;}
+                &:nth-of-type(6) dt:before { width:vw(35); height:vw(35); background-image:url(../../images/main/effect_ico_06.png); bottom:vw(12); left:vw(1); }
+            }
+            dt {
+                font-size:vw(24); font-weight:$semi-bold; letter-spacing:vw(-.72); position:relative; padding:0 0 vw(16) vw(49); margin:0 0 vw(36);
+                &:before {
+                    content:""; position:absolute;
+                    @include backgroundSoltC();
+                }
+                &:after { width:100%; height:vw(2); content:''; background-color:$black; position:absolute; bottom:0; left:0; }
+            }
+            dd {
+                text-align:right;
+                div { position:relative; display:inline-block; }
+            }
+            p { overflow:hidden; font-size:vw(26); font-weight:$extra-bold; letter-spacing:vw(-1.17); }
+            .default_text { color:#d4d5d6; }
+            .dimmed_text { width:0; color:$red1; position:absolute; top:0; left:0; white-space:nowrap; }
+            strong { font-size:vw(58); font-weight:$semi-bold; font-family:$elza; letter-spacing:vw(-1.74); padding:0 vw(8) 0 0; position:relative; top:vw(3); }
+        }
+    }
+
+    // 구호 활동가
+    #section06 { padding:vw(86) 0 vw(120); }
+    #activist {
+        .slogan_wrap {
+            position:relative; padding:0 vw(40);
+            &:after {
+                width:vw(325); height:vw(263); content:''; background-image:url(../../images/main/activist_bg.png); position:absolute; top:vw(-83); right:0; z-index:-1;
+                @include backgroundSoltC();
+            }
+            h2 { font-size:vw(62); font-weight:$bold; line-height:vw(78); letter-spacing:vw(-3.72); }
+            p { color:$gray4; font-size:vw(28); font-weight:$medium; line-height:vw(44); letter-spacing:vw(-.84); margin:vw(27) 0 0; }
+        }
+
+        .activist_list_wrap { margin:vw(59) 0 0; padding:0 vw(40); }
+        .activist_list {
+            li {
+                width:vw(420); position:relative;
+                .bg {
+                    height:vw(528);
+                    @include backgroundSoltC();
+                }
+                .info_wrap {
+                    position:absolute; bottom:vw(39); left:vw(39);
+                    p {
+                        color:$white;
+                        strong { font-size:vw(36); font-weight:$medium; letter-spacing:vw(-1.62); }
+                        span { font-size:vw(24); font-weight:$medium; letter-spacing:vw(-.72); padding:0 0 0 vw(6); }
+                    }
+                    > span { display:block; font-size:vw(24); letter-spacing:vw(-.72); padding:vw(15) 0 0; }
+                }
+
+                &.activist_jimin {
+                    .bg {background-image:url(../../images/main/activist_jimin.png);}
+                    .info_wrap > span { color:$yellow3; }
+                }
+                &.activist_youngwoong {
+                    .bg {background-image:url(../../images/main/activist_youngwoong.png);}
+                    .info_wrap > span { color:#d3e9f8; }
+                }
+                &.activist_sunhwa {
+                    .bg {background-image:url(../../images/main/activist_sunhwa.png);}
+                    .info_wrap > span { color:#dbe6c1; }
+                }
+            }
+        }
+    }
+
+    // 후원이야기
+    #story {
+        background-image:url(../../images/main/noise_bg2.jpg); padding:vw(108) 0 vw(121); overflow:hidden;
+        @include backgroundSolt(0, 0, repeat);
+        .slogan_wrap {
+            padding:0 vw(40); position:relative;
+            h2 { display:block; font-size:vw(50); line-height:vw(66); font-weight:$bold; letter-spacing:vw(-2.25); }
+        }
+        .marquee_wrap {
+            padding:vw(90) 0 0;
+            > div { display:flex; }
+            ul {
+                white-space:nowrap; display:flex;
+                @include animation(rollingEffect 24s linear infinite);
+            }
+            li { width:vw(440); height:vw(440); }
+            .letter {
+                font-size:vw(36); line-height:vw(44); font-family:$GaRamYeonGgoc; text-align:center; display:flex; justify-content:center; align-items:center; background-color:$white; margin:0 0 0 vw(20);
+                strong { display:block; font-weight:$regular; }
+                span { color:$gray4; display:block; padding:vw(6) 0 0; }
+            }
+            .letter01 {
+                margin:0;
+                @include rotate(4);
+            }
+            .letter02 {
+                background-color:#daeaff; top:vw(1);
+                @include rotate(2);
+                strong { color:#182b45; }
+                span { color:#556272; }
+            }
+            .letter03 {
+                top:vw(1);
+                @include rotate(4);
+            }
+            .letter04 {
+                background-color:#ffe8e5; top:vw(1);
+                @include rotate(3);
+                strong { color:#552b25; }
+                span { color:#77544f; }
+            }
+            .letter05 { @include rotate(5); }
+            .photo {
+                z-index:1; margin:0 0 0 vw(10); position:relative;
+                @include backgroundSoltC();
+            }
+            .photo01 {
+                background-image:url(../../images/main/photo01.jpg); top:vw(9);
+                @include rotate(-5);
+            }
+            .photo02 {
+                background-image:url(../../images/main/photo02.jpg); top:vw(1);
+                @include rotate(-3);
+            }
+            .photo03 {
+                background-image:url(../../images/main/photo03.jpg); top:vw(1);
+                @include rotate(1);
+            }
+            .photo04 {
+                background-image:url(../../images/main/photo04.jpg); top:vw(7);
+                @include rotate(-5);
+            }
+            .photo05 {
+                background-image:url(../../images/main/photo05.jpg); top:vw(1);
+                @include rotate(5);
+            }
+        }
+    }
+
+    // 후원캠페인
+    #section08 { padding:vw(111) 0 vw(240); }
+    #campaign {
+        .slogan_wrap {
+            position:relative; margin:0 0 vw(48); padding:0 vw(40);
+            h2 { font-size:vw(50); line-height:vw(66); letter-spacing:vw(-2.25); }
+        }
+        .campaign_wrap {padding:0 vw(40) vw(60);}
+        li {
+            width:vw(400);
+            a {
+                display:block;
+                .thumb {
+                    overflow:hidden;
+                    @include borderRadius(vw(14));
+                }
+                div { padding:vw(28) 0 0; }
+                strong {font-size:vw(28); letter-spacing:vw(-.84); font-weight:$semi-bold; display:block; white-space:nowrap; overflow:hidden; text-overflow: ellipsis;}
+                span { font-size:vw(24); margin:vw(13) 0 0; letter-spacing:vw(-.72); display:block; color:$gray4; white-space:nowrap; overflow:hidden; text-overflow: ellipsis; }
+            }
+        }
+        .campaign_wrap_scroll {
+            height:vw(4); background:#f0f1f2; bottom:vw(-58); left:0;
+            @include borderRadius(vw(2));
+            .swiper-scrollbar-drag {
+                background:#8c8d8e;
+                @include borderRadius(vw(2));
+            }
+        }
+    }
+}
+
+/* 롤링 효과 */
+@include keyframes(rollingEffect){
+    from { @include translate(0, 0); }
+    to { @include translate(-100%, 0); }
+}
