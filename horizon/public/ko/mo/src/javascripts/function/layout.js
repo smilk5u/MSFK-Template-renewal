@@ -96,32 +96,38 @@ function layout() {
         e.preventDefault();
     });
 
-    /*Kakao.init('0722022c2f65785c1a8b09c2fcb9c4c6');
-    $btnKakao.click(function(){
-        Kakao.Share.sendDefault({
-            objectType: 'feed',
-            content: {
-                title: '테스트-title',
-                description: '테스트-des',
-                imageUrl: '카카오공유하기 시 썸네일 이미지 경로',
-                link: {
-                    mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/mobile/',
-                    webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-                },
+    /* 계정 ample0004@gmail.com / am-ple2023! */
+   Kakao.init('6d0304b5a7fe469dd840fc2038524d3f');  // am-ple 어플리케이션 javascript 키
+   $btnKakao.click(function () {
+      // Kakao.Link.sendCustom({
+      //    templateId: 93029   // 템플릿 ID
+      // });
+      Kakao.Share.sendDefault({
+         objectType: 'feed',
+         content: {
+            title: '국경없는 의사회 - 제목',
+            description: '국경 - 설명',
+            imageUrl: 'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+            link: {
+               mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+               webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
             },
-            buttons: [
-                {
-                    title: '테스트 - button title',
-                    link: {
-                        mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/mobile/',
-                        webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-                    },
-                },
-            ],
-            // 카카오톡 미설치 시 카카오톡 설치 경로이동
-            installTalk: true,
-        })
-    });*/
+         },
+         itemContent: {
+            profileText: '국경없는 의사회',
+            profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+         },
+         buttons: [
+            {
+               title: '자세히 보기',
+               link: {
+                  mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+                  webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+               },
+            },
+         ],
+      });
+   });
 
     // clipboard
     $('#copyUrl').text(sendUrl); // 현재창 URL로 변경

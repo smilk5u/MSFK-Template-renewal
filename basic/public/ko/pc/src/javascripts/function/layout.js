@@ -127,12 +127,11 @@ function layout() {
    });
 
 
-   Kakao.init('a09e790c39ccaa5e81a81fc25ea18a26');  // 민주어플리케이션 javascript 키
    /* 계정 ample0004@gmail.com / am-ple2023! */
-   
+   Kakao.init('6d0304b5a7fe469dd840fc2038524d3f');  // am-ple 어플리케이션 javascript 키
    $btnKakao.click(function () {
       // Kakao.Link.sendCustom({
-      //    templateId: 92855   // 템플릿 ID
+      //    templateId: 93029   // 템플릿 ID
       // });
       Kakao.Share.sendDefault({
          objectType: 'feed',
