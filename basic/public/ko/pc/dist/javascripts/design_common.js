@@ -228,6 +228,9 @@ function layout() {
       window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl, '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
    });
 
+   console.log(location.href)
+   console.log('./../images/common/kakao_thumbnail.jpg')
+   console.log('../../images/main/visual_A.jpg')
 
    /* 계정 ample0004@gmail.com / am-ple2023! */
    Kakao.init('6d0304b5a7fe469dd840fc2038524d3f');  // am-ple 어플리케이션 javascript 키
@@ -238,24 +241,22 @@ function layout() {
       Kakao.Share.sendDefault({
          objectType: 'feed',
          content: {
-            title: '국경없는 의사회 - 제목',
-            description: '국경 - 설명',
-            imageUrl: 'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-            link: {
-               mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-               webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+            title: '캠페인 제목 영역입니다',
+            description: '우리는 오늘도 환자를 치료합니다',
+            imageUrl: 'https://am-ple.com/test/msfk/template_re/basic/images/common/kakao_thumbnail.jpg',
+            imageWidth: 800,
+            imageHeight: 250,
+            link: {  
+               mobileWebUrl: location.href,
+               webUrl: location.href,
             },
-         },
-         itemContent: {
-            profileText: '국경없는 의사회',
-            profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
          },
          buttons: [
             {
                title: '자세히 보기',
                link: {
-                  mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-                  webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+                  mobileWebUrl: location.href,
+                  webUrl: location.href,
                },
             },
          ],

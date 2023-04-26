@@ -130,24 +130,20 @@ function layout() {
       Kakao.Share.sendDefault({
          objectType: 'feed',
          content: {
-            title: '국경없는 의사회 - 제목',
-            description: '국경 - 설명',
+            title: '캠페인 제목 영역입니다',
+            description: '우리는 오늘도 환자를 치료합니다',
             imageUrl: 'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
             link: {
-               mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-               webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+               mobileWebUrl: location.href,
+               webUrl: location.href,
             },
-         },
-         itemContent: {
-            profileText: '국경없는 의사회',
-            profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
          },
          buttons: [
             {
                title: '자세히 보기',
                link: {
-                  mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-                  webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+                  mobileWebUrl: location.href,
+                  webUrl: location.href,
                },
             },
          ],
