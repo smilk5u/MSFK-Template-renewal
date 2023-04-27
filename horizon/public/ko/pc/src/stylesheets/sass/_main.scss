@@ -12,8 +12,8 @@
       width:1760px; margin:0 auto; padding:40px 0 80px; position:relative;
       .slogan_wrap {
         color:$black; margin:0 0 50px;
-        span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-0.45px; }
-        p { font-size:60px; font-weight:$bold; letter-spacing:-0.7px; }
+        span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-1px; &::selection { background-color: #eee; } }
+        p { font-size:60px; font-weight:$bold; letter-spacing:-2.5px; &::selection { background-color: #eee; } }
       }
       .bg {
         width:100%; height:540px; background-image:url(../../images/main/visual_A.jpg);
@@ -25,8 +25,8 @@
     /* 영문카피 들어가는 경우 */
     &.visual_eng .visual_type01 {
       padding:43px 0 80px;
-      .slogan_wrap { margin:0 0 47px }
-      .slogan_wrap span { letter-spacing:1px; font-family:$elza; margin:0 0 16px; }
+      .slogan_wrap { margin: 0 0 47px; }
+      .slogan_wrap span { letter-spacing:-1px; font-family:$elza; margin:0 0 16px; }
       .slogan_wrap span em { font-family:$pretendard; font-weight:$bold; letter-spacing:-0.05px; }
     }
 
@@ -36,7 +36,7 @@
       .slogan_wrap {
         color:$white;
         span { display:block; font-size:32px; line-height:46px; font-weight:$semi-bold; margin:0 0 12px; letter-spacing:-0.45px; }
-        p { font-size:56px; line-height:72px; font-weight:$bold; letter-spacing:-0.7px; }
+        p { font-size:56px; line-height:72px; font-weight:$bold; letter-spacing:-2.5px; }
       }
       .bg {
         width:1100px; height:740px; background-image:url(../../images/main/visual_B.jpg);
@@ -47,7 +47,7 @@
 
     /* 영문카피 들어가는 경우 */
     &.visual_eng .visual_type02 {
-      .slogan_wrap span { letter-spacing:1px; font-family:$elza; margin:0 0 11px; padding:3px 0 0; }
+      .slogan_wrap span { letter-spacing:-1px; font-family:$elza; margin:0 0 11px; padding:3px 0 0; }
       .slogan_wrap span em { font-family:$pretendard; font-weight:$bold; letter-spacing:-0.05px; }
     }
 
@@ -65,8 +65,8 @@
         > div { width:1600px; margin:0 auto; position:relative; }
         .slogan_wrap {
           color:$white;
-          span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-0.45px; }
-          p { font-size:60px; font-weight:$bold; letter-spacing:-0.7px; }
+          span { display:block; font-size:32px; font-weight:$semi-bold; margin:0 0 19px; letter-spacing:-1px; }
+          p { font-size:60px; font-weight:$bold; letter-spacing:-2.5px; }
         }
         .donate_btn { top:-32px; right:0; }
       }

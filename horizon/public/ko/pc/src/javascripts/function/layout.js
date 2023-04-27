@@ -137,24 +137,22 @@ function layout() {
       Kakao.Share.sendDefault({
          objectType: 'feed',
          content: {
-            title: '국경없는 의사회 - 제목',
-            description: '국경 - 설명',
-            imageUrl: 'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+            title: '캠페인 제목 영역입니다',
+            description: '우리는 오늘도 환자를 치료합니다',
+            imageUrl: 'https://am-ple.com/test/msfk/template_re/basic/images/common/kakao_thumbnail.jpg',
+            imageWidth: 800,
+            imageHeight: 420,
             link: {
-               mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-               webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+               mobileWebUrl: location.href,
+               webUrl: location.href,
             },
-         },
-         itemContent: {
-            profileText: '국경없는 의사회',
-            profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
          },
          buttons: [
             {
                title: '자세히 보기',
                link: {
-                  mobileWebUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
-                  webUrl: 'https://am-ple.com/test/msfk/template_re/basic/',
+                  mobileWebUrl: location.href,
+                  webUrl: location.href,
                },
             },
          ],
@@ -173,5 +171,13 @@ function layout() {
             gsap.to($copyInfoTxt, .3, { opacity: 0, /*visibility:"hidden",*/ y: "100%", delay: 1 });
          }
       });
-   });
+   });   
+
+   $(window).scroll(function () {
+      if (winSc > $('#wrap').outerHeight() - window.innerHeight - $('footer').outerHeight()) {
+         $('.share_wrap').addClass('fixed_share');
+      } else {
+         $('.share_wrap').removeClass('fixed_share');
+      }
+  });
 }
