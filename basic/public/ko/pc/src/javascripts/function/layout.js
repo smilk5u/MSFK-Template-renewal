@@ -126,10 +126,6 @@ function layout() {
       window.open("https://twitter.com/intent/tweet?text=" + sendText + "&url=" + sendUrl, '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
    });
 
-   console.log(location.href)
-   console.log('./../images/common/kakao_thumbnail.jpg')
-   console.log('../../images/main/visual_A.jpg')
-
    /* 계정 ample0004@gmail.com / am-ple2023! */
    Kakao.init('6d0304b5a7fe469dd840fc2038524d3f');  // am-ple 어플리케이션 javascript 키
    $btnKakao.click(function () {
@@ -144,7 +140,7 @@ function layout() {
             imageUrl: 'https://am-ple.com/test/msfk/template_re/basic/images/common/kakao_thumbnail.jpg',
             imageWidth: 800,
             imageHeight: 420,
-            link: {  
+            link: {
                mobileWebUrl: location.href,
                webUrl: location.href,
             },
@@ -174,4 +170,12 @@ function layout() {
          }
       });
    });
+
+   $(window).scroll(function () {
+      if (winSc > $('#wrap').outerHeight() - window.innerHeight - $('footer').outerHeight()) {
+         $('.share_wrap').addClass('fixed_share');
+      } else {
+         $('.share_wrap').removeClass('fixed_share');
+      }
+  });
 }

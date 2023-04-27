@@ -64,7 +64,7 @@ header {
 }*/
 
 footer {
-  min-width:1760px; background-color:#1d1d1d; padding:46px 0 0;
+  position: relative; min-width:1760px; background-color:#1d1d1d; padding:46px 0 0;
   .footer_wrap {
     max-width:1600px; margin:0 auto;
     @extend %clearfix;
@@ -101,6 +101,7 @@ footer {
 
   .share_wrap {
     position:fixed; bottom:24px; right:31px; background-color:$white; z-index:100; overflow:hidden;
+    &.fixed_share { position: absolute; right: 31px; bottom: 180px; }
     @include borderRadius(100%);
     @include boxShadow(0 0 10px -2px rgba(140,140,140,0.5));
     button {
@@ -137,7 +138,7 @@ footer {
   }
 
   // 복사될 텍스트
-  .copy_text { position:absolute; bottom:0; left:0; width:0; height:0; display:inline-block; line-height:1px; z-index:-1; }
+  .copy_text { position:absolute; bottom:10px; left:0; display:inline-block; z-index:-1; }
 
   // 복사완료 안내문구
   .copied_txt {
